@@ -42,10 +42,20 @@ enum Spread: String {
     case none = "None"
     case almondbutter = "Almond Butter"
     case peanutbutter = "Peanut Butter"
-    case humous = "Hummus"
-    case chutney = "Chutney"
+    case honey = "Honey"
+    case almou = "Almou"
     case tapenade = "Tapenade"
+    case hummus = "Hummus"
+    case mayonnaise = "Mayonnaise"
+    case kyopolou = "Kyopolou"
+    case adjvar = "Adjvar"
+    case pindjur = "Pindjur"
+    case vegemite = "Vegemite"
+    case chutney = "Chutney"
     case feroce = "Féroce"
+    case kartoffelkase = "kartoffelkäse"
+    case tartarsauce = "Tartar Sauce"
+
 }
 
 enum Avocado: String {

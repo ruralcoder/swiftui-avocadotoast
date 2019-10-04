@@ -13,6 +13,10 @@
 		087C5E8E2347AA07008259A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 087C5E8D2347AA07008259A1 /* Assets.xcassets */; };
 		087C5E912347AA07008259A1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 087C5E902347AA07008259A1 /* Preview Assets.xcassets */; };
 		087C5E942347AA07008259A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 087C5E922347AA07008259A1 /* LaunchScreen.storyboard */; };
+		08C1A67E2347F6BB007839F5 /* OrderHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C1A67D2347F6BB007839F5 /* OrderHistory.swift */; };
+		08C1A6802347F707007839F5 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C1A67F2347F707007839F5 /* Models.swift */; };
+		08C1A6822347F735007839F5 /* CompletedOrderDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C1A6812347F735007839F5 /* CompletedOrderDetail.swift */; };
+		08C1A6842347F74E007839F5 /* OrderForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C1A6832347F74E007839F5 /* OrderForm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		087C5E902347AA07008259A1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		087C5E932347AA07008259A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		087C5E952347AA07008259A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08C1A67D2347F6BB007839F5 /* OrderHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistory.swift; sourceTree = "<group>"; };
+		08C1A67F2347F707007839F5 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		08C1A6812347F735007839F5 /* CompletedOrderDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedOrderDetail.swift; sourceTree = "<group>"; };
+		08C1A6832347F74E007839F5 /* OrderForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderForm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +66,11 @@
 			children = (
 				087C5E872347AA03008259A1 /* AppDelegate.swift */,
 				087C5E892347AA03008259A1 /* SceneDelegate.swift */,
+				08C1A67F2347F707007839F5 /* Models.swift */,
 				087C5E8B2347AA03008259A1 /* ContentView.swift */,
+				08C1A6832347F74E007839F5 /* OrderForm.swift */,
+				08C1A67D2347F6BB007839F5 /* OrderHistory.swift */,
+				08C1A6812347F735007839F5 /* CompletedOrderDetail.swift */,
 				087C5E8D2347AA07008259A1 /* Assets.xcassets */,
 				087C5E922347AA07008259A1 /* LaunchScreen.storyboard */,
 				087C5E952347AA07008259A1 /* Info.plist */,
@@ -149,6 +161,10 @@
 				087C5E882347AA03008259A1 /* AppDelegate.swift in Sources */,
 				087C5E8A2347AA03008259A1 /* SceneDelegate.swift in Sources */,
 				087C5E8C2347AA03008259A1 /* ContentView.swift in Sources */,
+				08C1A6822347F735007839F5 /* CompletedOrderDetail.swift in Sources */,
+				08C1A67E2347F6BB007839F5 /* OrderHistory.swift in Sources */,
+				08C1A6842347F74E007839F5 /* OrderForm.swift in Sources */,
+				08C1A6802347F707007839F5 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -55,7 +55,7 @@ struct CompletedOrderDetail: View {
                 Text(order.notes)
             }
             
-        }.navigationBarTitle(Text(order.purchaseDate))
+        }.navigationBarTitle(Text(order.purchaseDate), displayMode: .inline)
         
         
         

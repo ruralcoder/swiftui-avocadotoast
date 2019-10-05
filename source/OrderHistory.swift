@@ -17,7 +17,7 @@ struct OrderHistory: View {
             NavigationLink(destination: CompletedOrderDetail(order: order)) {
                 CompletedOrderCell(order: order)
             }
-        }.navigationBarTitle(Text("History"))
+        }.navigationBarTitle(Text("History"), displayMode: .inline)
     }
 }
 

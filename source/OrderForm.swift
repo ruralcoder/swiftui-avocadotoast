@@ -8,67 +8,96 @@
 
 import SwiftUI
 
+struct BreadPicker: View {
+    @Binding var bread: Bread
+    
+    var body: some View {
+        Picker(selection: $bread, label: Text("Bread")) {
+            ForEach(Bread.allCases) { bread in
+                Text(bread.rawValue).tag(bread)
+            }
+        }
+    }
+}
+
+struct ToastedPicker: View {
+    @Binding var toast: Toast
+    
+    var body: some View {
+        Picker(selection: $toast, label: Text("Toasted")) {
+            ForEach(Toast.allCases) { toast in
+                Text(toast.rawValue).tag(toast)
+            }
+        }
+    }
+}
+
+struct SpreadPicker: View {
+    @Binding var spread: Spread
+    
+    var body: some View {
+        Picker(selection: $spread, label: Text("Spread")) {
+            ForEach(Spread.allCases) { spread in
+                Text(spread.rawValue).tag(spread)
+            }
+        }
+    }
+}
+
+struct AvocadoPicker: View {
+    @Binding var avocado: Avocado
+    
+    var body: some View {
+        Picker(selection: $avocado, label: Text("Avocado")) {
+            ForEach(Avocado.allCases) { avocado in
+                Text(avocado.rawValue).tag(avocado)
+            }
+        }
+    }
+}
+
+
+
 struct OrderForm: View {
     @State var order = Order()
     
     var body: some View {
-        
-        VStack {
+        Form {
+            Section(header: Text("Base")) {
+                BreadPicker(bread: $order.bread)
+                ToastedPicker(toast: $order.toast)
+            }
             
-            Text("Avocado Toast").font(.title)
+            Section(header: Text("Toppings")) {
+                SpreadPicker(spread: $order.spread)
+                AvocadoPicker(avocado: $order.avocado)
+            }
             
-            Form {
-                Section(header: Text("Base")) {
-                    Picker(selection: $order.bread, label: Text("Bread")) {
-                        ForEach(Bread.allCases, id: \.self) { bread in
-                            Text(bread.rawValue).tag(bread)
-                        }
-                    }
-                    Picker(selection: $order.toast, label: Text("Toasted")) {
-                        ForEach(Toast.allCases, id: \.self) { toast in
-                            Text(toast.rawValue).tag(toast)
-                        }
-                    }
+            Section(header: Text("Extras")) {
+                Toggle(isOn: $order.includeSalt) {
+                    Text("Include Salt")
                 }
-                
-                Section(header: Text("Toppings")) {
-                    Picker(selection: $order.spread, label: Text("Spread")) {
-                        ForEach(Spread.allCases, id: \.self) { spread in
-                            Text(spread.rawValue).tag(spread)
-                        }
-                    }
-                    Picker(selection: $order.avocado, label: Text("Avocado")) {
-                        ForEach(Avocado.allCases, id: \.self) { avocado in
-                            Text(avocado.rawValue).tag(avocado)
-                        }
-                    }
+                Toggle(isOn: $order.includeRedPepperFlakes) {
+                    Text("Include Red Pepper Flakes")
                 }
-                
-                Section(header: Text("Extras")) {
-                    Toggle(isOn: $order.includeSalt) {
-                        Text("Include Salt")
-                    }
-                    Toggle(isOn: $order.includeRedPepperFlakes) {
-                        Text("Include Red Pepper Flakes")
-                    }
-                    Toggle(isOn: $order.includeEggs) {
-                        Text("Include Eggs")
-                    }
-                }
-                
-                Section {
-                    Stepper(value: $order.quantity, in: 1...10) {
-                        Text("Quantity: \(order.quantity)")
-                    }
-                }
-                
-                Section {
-                    Button(action: {print("awesome")}) {
-                        Text("Submit Order")
-                    }
+                Toggle(isOn: $order.includeEggs) {
+                    Text("Include Eggs")
                 }
             }
-        }
+            
+            Section {
+                Stepper(value: $order.quantity, in: 1...10) {
+                    Text("Quantity: \(order.quantity)")
+                }
+            }
+            
+            Section {
+                Button(action: {print("awesome")}) {
+                    Text("Submit Order")
+                }
+            }
+        }.navigationBarTitle(Text("Avocado Toast"))
+        
         
     }
 }

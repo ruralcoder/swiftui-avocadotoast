@@ -15,7 +15,9 @@ struct ContentView: View {
         
         
         TabView(selection: $tabSelected) {
-            OrderForm()
+            NavigationView() {
+                OrderForm()
+            }
                 .tabItem {
                     Image(systemName: (tabSelected == 0 ? "doc.text.fill" : "doc.text") )
                     Text("New Order")

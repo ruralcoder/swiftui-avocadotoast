@@ -8,28 +8,29 @@
 
 import SwiftUI
 
-
-
 struct ContentView: View {
+    @State private var tabSelected = 0
+
     var body: some View {
         
-        NavigationView {
-            TabView {
-                OrderForm()
-                    .tabItem {
-                        Image(systemName: "square.and.pencil")
-                        Text("New Order")
-                    }
-
+        
+        TabView(selection: $tabSelected) {
+            OrderForm()
+                .tabItem {
+                    Image(systemName: (tabSelected == 0 ? "doc.text.fill" : "doc.text") )
+                    Text("New Order")
+            }.tag(0)
+            NavigationView() {
                 OrderHistory(completedOrders: sampleOrders)
-                    .tabItem {
-                        Image(systemName: "clock.fill")
-                        Text("History")
-                }
             }
-        }
+            .tabItem {
+                Image(systemName: (tabSelected == 1 ? "clock.fill" : "clock"))
+                Text("History")
+            }.tag(1)
+        } //.edgesIgnoringSafeArea(.all)
     }
 }
+
 
 
 

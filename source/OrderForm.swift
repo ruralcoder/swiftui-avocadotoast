@@ -13,28 +13,62 @@ struct OrderForm: View {
     
     var body: some View {
         
-        
-        Form {
-            Section {
+        VStack {
+            
+            Text("Avocado Toast").font(.title)
+            
+            Form {
+                Section(header: Text("Base")) {
+                    Picker(selection: $order.bread, label: Text("Bread")) {
+                        ForEach(Bread.allCases, id: \.self) { bread in
+                            Text(bread.rawValue).tag(bread)
+                        }
+                    }
+                    Picker(selection: $order.toast, label: Text("Toasted")) {
+                        ForEach(Toast.allCases, id: \.self) { toast in
+                            Text(toast.rawValue).tag(toast)
+                        }
+                    }
+                }
                 
-                Toggle(isOn: $order.includeSalt) {
-                    Text("Include Salt")
-                }
-                Toggle(isOn: $order.includeRedPepperFlakes) {
-                    Text("Include Red Pepper Flakes")
-                }
-                Stepper(value: $order.quantity, in: 1...10) {
-                    Text("Quantity: \(order.quantity)")
+                Section(header: Text("Toppings")) {
+                    Picker(selection: $order.spread, label: Text("Spread")) {
+                        ForEach(Spread.allCases, id: \.self) { spread in
+                            Text(spread.rawValue).tag(spread)
+                        }
+                    }
+                    Picker(selection: $order.avocado, label: Text("Avocado")) {
+                        ForEach(Avocado.allCases, id: \.self) { avocado in
+                            Text(avocado.rawValue).tag(avocado)
+                        }
+                    }
                 }
                 
-            }
-            Section {
-                Button(action: {print("awesome")}) {
-                    Text("Submit Order")
+                Section(header: Text("Extras")) {
+                    Toggle(isOn: $order.includeSalt) {
+                        Text("Include Salt")
+                    }
+                    Toggle(isOn: $order.includeRedPepperFlakes) {
+                        Text("Include Red Pepper Flakes")
+                    }
+                    Toggle(isOn: $order.includeEggs) {
+                        Text("Include Eggs")
+                    }
+                }
+                
+                Section {
+                    Stepper(value: $order.quantity, in: 1...10) {
+                        Text("Quantity: \(order.quantity)")
+                    }
+                }
+                
+                Section {
+                    Button(action: {print("awesome")}) {
+                        Text("Submit Order")
+                    }
                 }
             }
-        }.navigationBarTitle(Text("Avocado Toast"))
-        
+        }
         
     }
 }
@@ -48,4 +82,5 @@ struct OrderForm_Previews: PreviewProvider {
         }
     }
 }
+
 

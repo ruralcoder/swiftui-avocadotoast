@@ -10,18 +10,18 @@ import Combine
 import Foundation
 
 struct Order {
-    var includeSalt: Bool
-    var includeRedPepperFlakes: Bool
-    var quantity: Int
-    
-    init() {
-        self.includeSalt = false
-        self.includeRedPepperFlakes = false
-        self.quantity = 1
-    }
+    var includeSalt: Bool = false
+    var includeRedPepperFlakes: Bool = false
+    var includeEggs: Bool = false
+    var quantity: Int = 1
+    var bread: Bread = .sourdough
+    var toast: Toast = .lightly
+    var avocado: Avocado = .spread
+    var spread: Spread = .none
 }
 
-enum Toppings: String {
+
+enum Toppings: String, CaseIterable, Hashable, Identifiable {
     case salt = "Salt"
     case redPepperFlakes = "Red Pepper Flakes"
     case eggs = "Eggs"
@@ -29,23 +29,29 @@ enum Toppings: String {
     case chives = "Chives"
     case pickledOnion = "Pickled Onions"
     case watermelonRadish = "Watermelon Radish"
+    
+    var id: Toppings {self}
 }
 
-enum Bread: String {
+enum Bread: String, CaseIterable, Hashable, Identifiable {
     case rye = "Rye"
     case sourdough = "Sourdough"
     case wheat = "Wheat"
-    case multigrain = "Multi-Grain"
+    case multigrain = "Multigrain"
+
+    var id: Bread {self}
 }
 
-enum Toast: String {
+enum Toast: String, CaseIterable, Hashable, Identifiable {
     case none = "Not toasted"
     case lightly = "Lightly toasted"
     case well = "Well toasted"
     case crunch = "Crunch toasted"
+    
+    var id: Toast {self}
 }
 
-enum Spread: String {
+enum Spread: String, CaseIterable, Hashable, Identifiable {
     case none = "None"
     case almondbutter = "Almond Butter"
     case peanutbutter = "Peanut Butter"
@@ -63,12 +69,15 @@ enum Spread: String {
     case kartoffelkase = "kartoffelkäse"
     case tartarsauce = "Tartar Sauce"
 
+    var id: Spread {self}
 }
 
-enum Avocado: String {
+enum Avocado: String, CaseIterable, Hashable, Identifiable {
     case none = "None"
     case spread = "Spread"
     case sliced = "Sliced"
+    
+    var id: Avocado {self}
 }
 
 struct CompletedOrder: Identifiable {

@@ -3,13 +3,14 @@
 //  avocadotoast
 //
 //  Created by Stephen Anderson on 10/4/19.
-//  Copyright © 2019 Ruralcoder. All rights reserved.
+//  Copyright © 2019 Apple Inc. All rights reserved.
 //
 
 import SwiftUI
 
 struct CompletedOrderDetail: View {
     @State var order: CompletedOrder
+    
     var body: some View {
         Form {
             Section(header: Text("SUMMARY")) {
@@ -17,6 +18,11 @@ struct CompletedOrderDetail: View {
                     Text("Bread")
                     Spacer()
                     Text(order.bread.rawValue).foregroundColor(.secondary)
+                }
+                HStack {
+                    Text("Toasted")
+                    Spacer()
+                    Text(order.toast.rawValue).foregroundColor(.secondary)
                 }
                 HStack {
                     Text("Spread")
@@ -31,11 +37,14 @@ struct CompletedOrderDetail: View {
             }
             
             Section(header: Text("EXTRAS")) {
-                ForEach(order.toppings, id: \.self) {
-                    topping in
-                    Text(topping.rawValue)
+                if order.toppings.count > 0 {
+                    ForEach(order.toppings, id: \.self) {
+                        topping in
+                        Text(topping.rawValue)
+                    }
+                } else {
+                    Text("None")
                 }
-                
             }
             
             Section(header: Text("LAST ORDERED ON")) {
@@ -58,7 +67,7 @@ struct CompletedOrderDetail_Previews: PreviewProvider {
     
     static var previews: some View {
         NavigationView {
-            CompletedOrderDetail(order: sampleOrders.first!)
+            CompletedOrderDetail(order: sampleOrders[5])
         }
     }
 }

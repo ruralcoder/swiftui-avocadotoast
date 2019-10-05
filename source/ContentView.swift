@@ -3,7 +3,7 @@
 //  swiftuilearning
 //
 //  Created by Stephen Anderson on 10/4/19.
-//  Copyright © 2019 Ruralcoder. All rights reserved.
+//  Copyright © 2019 Apple Inc. All rights reserved.
 //
 
 import SwiftUI

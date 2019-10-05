@@ -4,6 +4,8 @@ This repo is for all those that watched in awe the 2019 WWDC video "Swift Essent
 
 Here is a working version of `avocadotoast` 
 
+*All rights remain with Apple Inc. I just patched the examples in the video with Apple's latest XCode 11 and Swift 5.1*
+
 ## What was missing
 
 ### Identifiable

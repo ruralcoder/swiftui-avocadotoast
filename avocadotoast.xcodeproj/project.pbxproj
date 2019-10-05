@@ -17,6 +17,7 @@
 		08C1A6802347F707007839F5 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C1A67F2347F707007839F5 /* Models.swift */; };
 		08C1A6822347F735007839F5 /* CompletedOrderDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C1A6812347F735007839F5 /* CompletedOrderDetail.swift */; };
 		08C1A6842347F74E007839F5 /* OrderForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C1A6832347F74E007839F5 /* OrderForm.swift */; };
+		08C1A6862348464D007839F5 /* EggPlacementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C1A6852348464D007839F5 /* EggPlacementView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		08C1A67F2347F707007839F5 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		08C1A6812347F735007839F5 /* CompletedOrderDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedOrderDetail.swift; sourceTree = "<group>"; };
 		08C1A6832347F74E007839F5 /* OrderForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderForm.swift; sourceTree = "<group>"; };
+		08C1A6852348464D007839F5 /* EggPlacementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggPlacementView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				087C5E922347AA07008259A1 /* LaunchScreen.storyboard */,
 				087C5E952347AA07008259A1 /* Info.plist */,
 				087C5E8F2347AA07008259A1 /* Preview Content */,
+				08C1A6852348464D007839F5 /* EggPlacementView.swift */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08C1A6862348464D007839F5 /* EggPlacementView.swift in Sources */,
 				087C5E882347AA03008259A1 /* AppDelegate.swift in Sources */,
 				087C5E8A2347AA03008259A1 /* SceneDelegate.swift in Sources */,
 				087C5E8C2347AA03008259A1 /* ContentView.swift in Sources */,

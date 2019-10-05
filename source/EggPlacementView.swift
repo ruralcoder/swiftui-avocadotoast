@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct EggPlacementView: View {
-    @State var eggPlacement: UnitPoint = UnitPoint(x: 0, y: 0)
+    @Binding var eggPlacement: UnitPoint
     var body: some View {
         ZStack {
             Image("toast").resizable().aspectRatio(contentMode: .fit).padding()
@@ -104,10 +104,11 @@ struct DraggableEgg: View {
 
 
 struct EggPlacementView_Previews: PreviewProvider {
+    @State static var eggPlacement = UnitPoint()
     
     static var previews: some View {
         NavigationView {
-            EggPlacementView()
+            EggPlacementView(eggPlacement: $eggPlacement)
         }
     }
 }

@@ -80,8 +80,13 @@ struct OrderForm: View {
                 Toggle(isOn: $order.includeRedPepperFlakes) {
                     Text("Include Red Pepper Flakes")
                 }
-                Toggle(isOn: $order.includeEggs) {
+                Toggle(isOn: $order.includeEggs.animation()) {
                     Text("Include Eggs")
+                }
+                if order.includeEggs {
+                    NavigationLink(destination: EggPlacementView(eggPlacement: $order.eggPlacement)) {
+                        Text("Egg Placement")
+                    }
                 }
             }
             

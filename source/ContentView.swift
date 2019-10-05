@@ -10,17 +10,15 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var tabSelected = 0
-
+    
     var body: some View {
-        
-        
         TabView(selection: $tabSelected) {
             NavigationView() {
                 OrderForm()
             }
-                .tabItem {
-                    Image(systemName: (tabSelected == 0 ? "doc.text.fill" : "doc.text") )
-                    Text("New Order")
+            .tabItem {
+                Image(systemName: (tabSelected == 0 ? "doc.text.fill" : "doc.text") )
+                Text("New Order")
             }.tag(0)
             NavigationView() {
                 OrderHistory(completedOrders: sampleOrders)
@@ -29,16 +27,9 @@ struct ContentView: View {
                 Image(systemName: (tabSelected == 1 ? "clock.fill" : "clock"))
                 Text("History")
             }.tag(1)
-        } //.edgesIgnoringSafeArea(.all)
+        }
     }
 }
-
-
-
-
-
-
-
 
 
 struct ContentView_Previews: PreviewProvider {

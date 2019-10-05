@@ -8,6 +8,8 @@
 
 import Combine
 import Foundation
+import SwiftUI
+
 
 struct Order {
     var includeSalt: Bool = false
@@ -18,6 +20,7 @@ struct Order {
     var toast: Toast = .lightly
     var avocado: Avocado = .spread
     var spread: Spread = .none
+    var eggPlacement: UnitPoint = UnitPoint(x: 0, y: 0)
 }
 
 

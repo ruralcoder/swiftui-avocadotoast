@@ -73,11 +73,11 @@
 				08C1A6832347F74E007839F5 /* OrderForm.swift */,
 				08C1A67D2347F6BB007839F5 /* OrderHistory.swift */,
 				08C1A6812347F735007839F5 /* CompletedOrderDetail.swift */,
+				08C1A6852348464D007839F5 /* EggPlacementView.swift */,
 				087C5E8D2347AA07008259A1 /* Assets.xcassets */,
 				087C5E922347AA07008259A1 /* LaunchScreen.storyboard */,
 				087C5E952347AA07008259A1 /* Info.plist */,
 				087C5E8F2347AA07008259A1 /* Preview Content */,
-				08C1A6852348464D007839F5 /* EggPlacementView.swift */,
 			);
 			path = source;
 			sourceTree = "<group>";

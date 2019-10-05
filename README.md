@@ -127,7 +127,7 @@ ForEach(order.toppings, id: \.self) { topping in
 
 
 
-## Navigation gaps
+## Navigation changes
 The presentation has the following code which of course does not work.
 ```
 NavigationView {
@@ -143,12 +143,12 @@ the working version is
 
 ```
 NavigationView {
-            TabView {
-                OrderForm()
-                    .tabItem {
-                        Image(systemName: "square.and.pencil")
-                        Text("New Order")
-                    }
+    TabView {
+        OrderForm()
+            .tabItem {
+                Image(systemName: "square.and.pencil")
+                Text("New Order")
+             }
 ```
 
 

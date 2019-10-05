@@ -131,12 +131,12 @@ ForEach(order.toppings, id: \.self) { topping in
 The presentation has the following code which of course does not work.
 ```
 NavigationView {
-            TabbedView {
-                OrderForm()
-                    .tabItemLabel {
-                        Image(systemName: "square.and.pencil")
-                        Text("New Order")
-                    }
+    TabbedView {
+        OrderForm()
+            .tabItemLabel {
+                Image(systemName: "square.and.pencil")
+                Text("New Order")
+             }
 ```
 
 the working version is

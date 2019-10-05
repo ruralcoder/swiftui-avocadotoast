@@ -4,6 +4,8 @@ This repo is for all those that watched in awe the 2019 WWDC video "Swift Essent
 
 Here is a working version of `avocadotoast` 
 
+*All rights remain with Apple Inc. I just patched the examples in the video with Apple's latest XCode 11 and Swift 5.1*
+
 ## What was missing
 
 ### Identifiable
@@ -24,8 +26,7 @@ So by implementing the `Identifiable` protocol and of course adding a `id` field
 
 Constructing it of course is as easy.
 ```
-CompletedOrder(id: UUID(), summary: "Rye with Almond Butter", purchaseDate: "5/30/19 8:47PM", quantity: 1, includeSalt: true, includeRedPepperFlakes: true),
-
+CompletedOrder(id: UUID(), summary: "Rye with Almond Butter", bread:.rye, spread: .almondbutter, purchaseDate: "5/30/19 8:47PM", quantity: 1, toppings: [.salt, .redPepperFlakes])
 ```
 
 ### The SaltIcon
@@ -52,12 +53,12 @@ struct SaltIcon: View {
 ### Generic toppings
 At some point the presenter replaces the `if...then..else` statements for injecting the SaltIcon with a more generic `ToppingIcon` again not showing how it was done.
 
-I introduced an enum
+I had to introduce an enum 
 ```
 enum Toppings: String {
-    case salt = "salt"
-    case redPepperFlakes = "redpepper"
-    case eggs = "eggs"
+    case salt = "Salt"
+    case redPepperFlakes = "Red Pepper Flakes"
+    case eggs = "Eggs"
 }
 ```
 
@@ -66,9 +67,13 @@ Changed the struct CompletedOrder to include an array for those toppings.
 struct CompletedOrder: Identifiable {
     var id: UUID
     var summary: String
+    var bread: Bread = .sourdough
+    var avocado: Avocado = .spread
+    var spread: Spread = .none
     var purchaseDate: String
-    var quantity: Int
+    var quantity: Int = 1
     var toppings: Array<Toppings>
+    var notes: String = "..."
 }
 ```
 
@@ -125,6 +130,31 @@ ForEach(order.toppings, id: \.self) { topping in
 }
 ```
 
+
+
+## Navigation changes
+The presentation has the following code which of course does not work.
+```
+NavigationView {
+    TabbedView {
+        OrderForm()
+            .tabItemLabel {
+                Image(systemName: "square.and.pencil")
+                Text("New Order")
+             }
+```
+
+the working version is
+
+```
+NavigationView {
+    TabView {
+        OrderForm()
+            .tabItem {
+                Image(systemName: "square.and.pencil")
+                Text("New Order")
+             }
+```
 
 
 
